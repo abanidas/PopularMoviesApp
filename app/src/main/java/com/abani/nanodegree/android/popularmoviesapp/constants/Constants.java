@@ -3,6 +3,10 @@ package com.abani.nanodegree.android.popularmoviesapp.constants;
 public class Constants {
 
     public static final String BASE_URL = "http://api.themoviedb.org/3/";
+
+    /*
+    * TODO : Please add your API Key here
+    */
     public static final String API_KEY = "";
     public static final String IMAGE_BASE_URL = "http://image.tmdb.org/t/p/w342/";
 
