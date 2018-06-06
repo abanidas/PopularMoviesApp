@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/margin_extra_small">
+
+    <!-- Layout for displaying each movie in the main activity -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/padding_small">
+
+
+        <ImageView
+            android:id="@+id/iv_movie_poster"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/ic_rect_background"
+            android:scaleType="fitXY"
+            android:adjustViewBounds="true"/>
+
+        <TextView
+            android:id="@+id/tv_year"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="@string/dummy_year"
+            android:fontFamily="@font/open_sans"
+            android:textColor="@android:color/black"
+            android:layout_margin="@dimen/margin_extra_small"
+            android:textSize="@dimen/text_size_small"
+            android:layout_below="@id/iv_movie_poster"/>
+
+        <LinearLayout
+            android:layout_below="@id/tv_year"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginLeft="@dimen/margin_extra_extra_small">
+
+            <ImageView
+                android:layout_width="@dimen/width_small"
+                android:layout_height="@dimen/height_small"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/ic_star_black_24dp"/>
+
+            <TextView
+                android:id="@+id/tv_avg_vote"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="@string/dummy_vote"
+                android:fontFamily="@font/open_sans"
+                android:textSize="@dimen/text_size_small"
+                android:textColor="@android:color/black"
+                android:layout_gravity="center_vertical"/>
+
+            <TextView
+                android:id="@+id/tv_vote_count"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="@string/dummy_no_votes"
+                android:fontFamily="@font/open_sans"
+                android:textSize="@dimen/text_size_small"
+                android:layout_gravity="center_vertical"/>
+        </LinearLayout>
+
+    </RelativeLayout>
+</android.support.v7.widget.CardView>

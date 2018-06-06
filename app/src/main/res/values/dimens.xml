@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="collapsing_toolbar_height">200dp</dimen>
+    <dimen name="text_size_medium">16sp</dimen>
+    <dimen name="bottom_sheet_height_small">120dp</dimen>
+    <dimen name="margin_medium">16dp</dimen>
+    <dimen name="margin_small">8dp</dimen>
+    <dimen name="margin_large">20dp</dimen>
+    <dimen name="text_size_average">20sp</dimen>
+    <dimen name="default_elevation">4dp</dimen>
+    <dimen name="padding_small">4dp</dimen>
+    <dimen name="padding_medium">8dp</dimen>
+    <dimen name="margin_extra_small">4dp</dimen>
+    <dimen name="text_size_small">12sp</dimen>
+    <dimen name="width_small">16dp</dimen>
+    <dimen name="height_small">16dp</dimen>
+    <dimen name="margin_extra_extra_small">2dp</dimen>
+</resources>

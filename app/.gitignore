@@ -1,0 +1,14 @@
+*.apk
+*.class
+.gradle/
+build/
+/.idea
+*.iml
+.idea/
+local.properties
+proguard/
+*.log
+.navigation/
+captures/
+/app/debug
+/app/release
