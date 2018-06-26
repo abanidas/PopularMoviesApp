@@ -243,9 +243,9 @@ public class MainActivity extends AppCompatActivity implements ItemClickListener
     }
 
     private void showInternetError(){
-        if (!movies.isEmpty()){
+        /*if (!movies.isEmpty()){
             movies.clear();
-        }
+        }*/
         if (rlInternetFailure.getVisibility() != View.VISIBLE) {
             rlInternetFailure.setVisibility(View.VISIBLE);
             mRecyclerView.setVisibility(View.GONE);
