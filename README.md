@@ -2,4 +2,4 @@
 
 *STAGE 1: Completed*
 
-*STAGE 2: Cpmpleted*
+*STAGE 2: Completed*
