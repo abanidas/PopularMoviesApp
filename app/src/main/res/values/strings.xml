@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Popular Movies App</string>
-    <string name="release_date_label">Release Date :</string>
-    <string name="average_rating_label">Ratings :</string>
+    <string name="release_date_label">Release Date</string>
+    <string name="average_rating_label">User Ratings</string>
     <string name="text_action_retry">Retry</string>
     <string name="text_no_internet">No Internet Connection</string>
     <string name="text_action_popular">Popular</string>
@@ -10,9 +10,16 @@
     <string name="text_button_filter">Filter</string>
     <string name="text_popular_movies_label"> Popular </string>
     <string name="text_top_rated_movies_label"> Top Rated </string>
+    <string name="text_favorites_movies_label"> Favorites </string>
     <string name="dummy_no_votes">(123)</string>
     <string name="dummy_vote">1.0</string>
     <string name="dummy_year">2018</string>
     <string name="plot_synopsys_label">Overview :</string>
     <string name="dummy_date">12/12/2018</string>
+    <string name="dummy_length">100</string>
+    <string name="length_label">Length</string>
+    <string name="movie_reviews_label">Reviews :</string>
+    <string name="text_not_available">N/A</string>
+    <string name="movie_videos_label">Videos :</string>
+    <string name="review_user_label">User :</string>
 </resources>

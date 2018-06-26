@@ -7,10 +7,10 @@ public class MovieDbResponse {
 
     @SerializedName("page")
     private Integer page;
-    @SerializedName("total_results")
+    /*@SerializedName("total_results")
     private Integer totalResults;
     @SerializedName("total_pages")
-    private Integer totalPages;
+    private Integer totalPages;*/
     @SerializedName("results")
     private List<Movie> movies = null;
 
@@ -22,7 +22,7 @@ public class MovieDbResponse {
         this.page = page;
     }
 
-    public Integer getTotalResults() {
+    /*public Integer getTotalResults() {
         return totalResults;
     }
 
@@ -36,7 +36,7 @@ public class MovieDbResponse {
 
     public void setTotalPages(Integer totalPages) {
         this.totalPages = totalPages;
-    }
+    }*/
 
     public List<Movie> getMovies() {
         return movies;

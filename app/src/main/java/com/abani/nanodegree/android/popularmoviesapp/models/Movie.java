@@ -1,38 +1,50 @@
 
 package com.abani.nanodegree.android.popularmoviesapp.models;
 
+import android.arch.persistence.room.ColumnInfo;
+import android.arch.persistence.room.Entity;
+import android.arch.persistence.room.PrimaryKey;
+import android.support.annotation.NonNull;
+
 import java.io.Serializable;
 import java.util.List;
 import com.google.gson.annotations.SerializedName;
 
+@Entity(tableName = "favorite_movie")
 public class Movie implements Serializable{
 
     @SerializedName("vote_count")
     private Integer voteCount;
+    @PrimaryKey
+    @NonNull
     @SerializedName("id")
     private Integer id;
     @SerializedName("video")
     private Boolean video;
+    @ColumnInfo(name = "vote_average")
     @SerializedName("vote_average")
     private Double voteAverage;
     @SerializedName("title")
     private String title;
     @SerializedName("popularity")
     private Double popularity;
+    @ColumnInfo(name = "poster_path")
     @SerializedName("poster_path")
     private String posterPath;
+    @ColumnInfo(name = "original_language")
     @SerializedName("original_language")
     private String originalLanguage;
+    @ColumnInfo(name = "original_title")
     @SerializedName("original_title")
     private String originalTitle;
-    @SerializedName("genre_ids")
-    private List<Integer> genreIds = null;
+    @ColumnInfo(name = "backdrop_path")
     @SerializedName("backdrop_path")
     private String backdropPath;
     @SerializedName("adult")
     private Boolean adult;
     @SerializedName("overview")
     private String overview;
+    @ColumnInfo(name = "release_date")
     @SerializedName("release_date")
     private String releaseDate;
 
@@ -108,13 +120,6 @@ public class Movie implements Serializable{
         this.originalTitle = originalTitle;
     }
 
-    public List<Integer> getGenreIds() {
-        return genreIds;
-    }
-
-    public void setGenreIds(List<Integer> genreIds) {
-        this.genreIds = genreIds;
-    }
 
     public String getBackdropPath() {
         return backdropPath;

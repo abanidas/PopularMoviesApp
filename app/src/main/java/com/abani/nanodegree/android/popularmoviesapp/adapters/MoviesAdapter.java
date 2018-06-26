@@ -6,14 +6,18 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.abani.nanodegree.android.popularmoviesapp.R;
+import com.abani.nanodegree.android.popularmoviesapp.adapters.interfaces.ItemClickListener;
 import com.abani.nanodegree.android.popularmoviesapp.constants.Constants;
 import com.abani.nanodegree.android.popularmoviesapp.models.Movie;
 import com.abani.nanodegree.android.popularmoviesapp.utils.CommonUtils;
 import com.squareup.picasso.Picasso;
 
+import java.text.ParseException;
+import java.util.Date;
 import java.util.List;
 
 import butterknife.BindView;
@@ -23,10 +27,6 @@ public class MoviesAdapter extends RecyclerView.Adapter<MoviesAdapter.MovieViewH
 
     private List<Movie> movies;
     private ItemClickListener itemClickListener;
-
-    public interface ItemClickListener {
-        void onItemClicked(int position);
-    }
 
     public void setOnItemClickListener(ItemClickListener itemClickListener) {
         this.itemClickListener = itemClickListener;
@@ -39,12 +39,14 @@ public class MoviesAdapter extends RecyclerView.Adapter<MoviesAdapter.MovieViewH
          */
         @BindView(R.id.iv_movie_poster)
         ImageView ivMovieYear;
-        @BindView(R.id.tv_year)
-        TextView tvYear;
+        @BindView(R.id.tv_movie_title)
+        TextView tvMovieTitle;
         @BindView(R.id.tv_avg_vote)
         TextView tvAvgVote;
-        @BindView(R.id.tv_vote_count)
-        TextView tvVoteCount;
+        @BindView(R.id.tv_release_date)
+        TextView tvReleaseDate;
+        @BindView(R.id.progressbar_rating)
+        ProgressBar progressBarRating;
 
         public MovieViewHolder(View itemView) {
             super(itemView);
@@ -72,14 +74,24 @@ public class MoviesAdapter extends RecyclerView.Adapter<MoviesAdapter.MovieViewH
                 .error(R.drawable.moviedb_placeholder)
                 .into(holder.ivMovieYear);
 
-        holder.tvYear.setText(movies.get(position).getReleaseDate().substring(0, 4));
+        holder.tvMovieTitle.setText(movies.get(position).getTitle());
         holder.tvAvgVote.setText(String.valueOf(movies.get(position).getVoteAverage()));
-        holder.tvVoteCount.setText(CommonUtils.formatWithParenthesis(String.valueOf(movies.get(position).getVoteCount())));
+        holder.progressBarRating.setProgress((int) (movies.get(position).getVoteAverage() * 10));
+
+        String releaseDateToDisplay = "N/A";
+        try {
+            Date responseDate = CommonUtils.getResponseFormatter().parse(movies.get(position).getReleaseDate());
+            releaseDateToDisplay = CommonUtils.getFormatterToDisplay().format(responseDate);
+
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        holder.tvReleaseDate.setText(releaseDateToDisplay);
 
         holder.ivMovieYear.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                itemClickListener.onItemClicked(position);
+                itemClickListener.onItemClicked(MoviesAdapter.class, position);
             }
         });
     }
@@ -89,4 +101,7 @@ public class MoviesAdapter extends RecyclerView.Adapter<MoviesAdapter.MovieViewH
         return movies.size();
     }
 
+    public void setMovies(List<Movie> movies) {
+        this.movies = movies;
+    }
 }

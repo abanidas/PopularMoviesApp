@@ -10,7 +10,7 @@
     <!-- Layout for displaying specific movie details -->
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content">
 
         <android.support.v7.widget.CardView
             android:id="@+id/movie_details_card"
@@ -22,14 +22,45 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
+                android:orientation="vertical"
                 android:layout_margin="@dimen/margin_small">
 
-                <ImageView
-                    android:id="@+id/iv_movie_poster"
-                    android:layout_width="wrap_content"
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/movie_placeholder"/>
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/iv_movie_poster"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/movie_placeholder"/>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:layout_margin="@dimen/margin_extra_small"
+                            android:padding="@dimen/padding_medium">
+
+                            <TextView
+                                android:id="@+id/tv_movie_description_label"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                app:layout_constrainedWidth="true"
+                                android:text="@string/plot_synopsys_label"
+                                android:textSize="@dimen/text_size_medium"
+                                android:fontFamily="@font/open_sans"
+                                android:textColor="@android:color/black"
+                                android:textStyle="bold"/>
+
+                            <TextView
+                                android:id="@+id/tv_movie_description"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/open_sans" />
+                        </LinearLayout>
+                </LinearLayout>
 
                 <RelativeLayout
                     android:layout_width="wrap_content"
@@ -39,13 +70,13 @@
 
                     <LinearLayout
                         android:id="@+id/frame_ratings"
-                        android:layout_width="match_parent"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:orientation="horizontal">
 
                         <FrameLayout
-                            android:layout_width="@dimen/circle_frame_diameter"
-                            android:layout_height="@dimen/circle_frame_diameter"
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"
                             android:layout_margin="@dimen/margin_small"
                             android:layout_gravity="center_vertical">
 
@@ -53,7 +84,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
                                 android:layout_gravity="center"
-                                app:backgroundTint="@color/colorPrimaryDark"
+                                app:backgroundTint="#081c24"
                                 android:layout_margin="@dimen/margin_small"
                                 android:layout_centerInParent="true"/>
 
@@ -68,14 +99,14 @@
                                 android:progress="0"
                                 android:progressDrawable="@drawable/custom_progress_drawable"
                                 android:secondaryProgress="100"
-                                android:elevation="@dimen/override_btn_elevation"
+                                android:elevation="6dp"
                                 android:layout_margin="@dimen/margin_small"/>
 
                             <LinearLayout
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:orientation="horizontal"
-                                android:elevation="@dimen/override_btn_elevation"
+                                android:elevation="6dp"
                                 android:layout_gravity="center">
 
                                 <TextView
@@ -88,13 +119,13 @@
                                     android:textColor="@android:color/white"/>
 
                                 <ImageView
-                                    android:layout_width="@dimen/icon_diameter_small"
-                                    android:layout_height="@dimen/icon_diameter_small"
+                                    android:layout_width="16dp"
+                                    android:layout_height="16dp"
                                     android:src="@drawable/ic_star_black_24dp"
                                     android:layout_gravity="bottom"/>
 
                             </LinearLayout>
-
+               
                         </FrameLayout>
 
                         <TextView
@@ -108,15 +139,15 @@
                     </LinearLayout>
 
                     <LinearLayout
+                        android:layout_toRightOf="@+id/frame_ratings"
                         android:id="@+id/frame_release_date"
-                        android:layout_below="@+id/frame_ratings"
-                        android:layout_width="match_parent"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:orientation="horizontal">
 
                         <FrameLayout
-                            android:layout_width="@dimen/circle_frame_diameter"
-                            android:layout_height="@dimen/circle_frame_diameter"
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"
                             android:layout_margin="@dimen/margin_small">
 
 
@@ -156,10 +187,10 @@
 
 
                     <android.support.design.widget.FloatingActionButton
-                        android:layout_below="@id/frame_release_date"
+                        android:layout_alignParentRight="true"
                         android:id="@+id/btn_add_to_favorite"
-                        android:layout_width="@dimen/btn_diameter_small"
-                        android:layout_height="@dimen/btn_diameter_small"
+                        android:layout_width="64dp"
+                        android:layout_height="64dp"
                         android:layout_margin="@dimen/margin_medium"
                         android:scaleType="centerCrop"
                         android:src="@drawable/ic_favorite"
@@ -170,43 +201,9 @@
 
         </android.support.v7.widget.CardView>
 
-
-        <android.support.v7.widget.CardView
-            android:id="@+id/card_movie_overview"
-            android:layout_below="@id/movie_details_card"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="@dimen/margin_extra_small"
-            app:cardElevation="@dimen/default_elevation">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:padding="@dimen/padding_medium">
-
-                <TextView
-                    android:id="@+id/tv_movie_description_label"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    app:layout_constrainedWidth="true"
-                    android:text="@string/plot_synopsys_label"
-                    android:textSize="@dimen/text_size_medium"
-                    android:fontFamily="@font/open_sans"
-                    android:textColor="@android:color/black"
-                    android:textStyle="bold"/>
-
-                <TextView
-                    android:id="@+id/tv_movie_description"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/open_sans" />
-            </LinearLayout>
-        </android.support.v7.widget.CardView>
-
         <android.support.v7.widget.CardView
             android:id="@+id/card_movie_videos"
-            android:layout_below="@+id/card_movie_overview"
+            android:layout_below="@+id/movie_details_card"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/margin_extra_small"
@@ -222,7 +219,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Videos :"
+                    android:text="@string/movie_videos_label"
                     android:textStyle="bold"
                     android:textSize="@dimen/text_size_medium"
                     android:textColor="@android:color/black"

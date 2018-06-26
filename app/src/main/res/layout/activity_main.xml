@@ -50,71 +50,6 @@
             android:layout_below="@+id/ll_filter_settings"/>
     </RelativeLayout>
 
-    <!-- Bottom sheet for filtering movie actions -->
-    <android.support.v4.widget.NestedScrollView
-        android:id="@+id/bottom_sheet_filter"
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/bottom_sheet_height_small"
-        android:clipToPadding="true"
-        android:layout_marginHorizontal="@dimen/margin_medium"
-        android:background="@android:color/white"
-        android:elevation="@dimen/default_elevation"
-        app:layout_behavior="android.support.design.widget.BottomSheetBehavior">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="@dimen/margin_small"
-                android:text="@string/text_action_filter_label"
-                android:textStyle="bold"
-                android:textColor="@android:color/black"
-                android:fontFamily="@font/open_sans"/>
-
-            <RadioGroup
-                android:id="@+id/radio_filter_group"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:weightSum="2">
-
-                <RadioButton
-                    android:id="@+id/btn_top_rated"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginHorizontal="@dimen/margin_large"
-                    android:layout_weight="1"
-                    android:background="@drawable/ic_chip_unselected"
-                    android:button="@null"
-                    android:text="@string/text_action_top_rated"
-                    android:fontFamily="@font/open_sans"
-                    android:gravity="center"
-                    android:textAlignment="center"
-                    android:textSize="@dimen/text_size_medium" />
-
-                <RadioButton
-                    android:id="@+id/btn_popular"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginHorizontal="@dimen/margin_large"
-                    android:layout_weight="1"
-                    android:background="@drawable/ic_chip"
-                    android:button="@null"
-                    android:text="@string/text_action_popular"
-                    android:fontFamily="@font/open_sans"
-                    android:textAlignment="center"
-                    android:gravity="center"
-                    android:textSize="@dimen/text_size_medium" />
-            </RadioGroup>
-        </LinearLayout>
-
-    </android.support.v4.widget.NestedScrollView>
-
-
     <!-- Layout to show message when there is no internet connection -->
     <RelativeLayout
         android:id="@+id/rl_internet_failure"
@@ -152,4 +87,57 @@
             android:textColor="@android:color/white"/>
 
     </RelativeLayout>
+
+    <!-- Bottom sheet for filtering movie actions -->
+    <android.support.v4.widget.NestedScrollView
+        android:id="@+id/bottom_sheet_filter"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clipToPadding="true"
+        android:layout_marginHorizontal="@dimen/margin_medium"
+        app:layout_behavior="android.support.design.widget.BottomSheetBehavior">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:elevation="@dimen/default_elevation"
+            android:padding="@dimen/padding_medium"
+            android:background="@color/colorPrimaryLight">
+
+
+                <Button
+                    android:id="@+id/btn_popular"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/ic_rect_background_selected"
+                    android:text="@string/text_action_popular"
+                    android:fontFamily="@font/open_sans"
+                    android:textSize="@dimen/text_size_medium"/>
+
+                <Button
+                    android:id="@+id/btn_top_rated"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/ic_rect_background"
+                    android:layout_marginTop="@dimen/margin_extra_extra_medium_small"
+                    android:text="@string/text_action_top_rated"
+                    android:fontFamily="@font/open_sans"
+                    android:textSize="@dimen/text_size_medium"/>
+
+                <Button
+                    android:id="@+id/btn_favorites"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/ic_rect_background"
+                    android:layout_marginTop="@dimen/margin_extra_extra_medium_small"
+                    android:text="Favorites"
+                    android:fontFamily="@font/open_sans"
+                    android:textSize="@dimen/text_size_medium"
+                    android:layout_marginBottom="@dimen/margin_extra_small"/>
+
+        </LinearLayout>
+
+    </android.support.v4.widget.NestedScrollView>
+
 </android.support.design.widget.CoordinatorLayout>
