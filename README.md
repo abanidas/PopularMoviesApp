@@ -11,7 +11,7 @@ This App displays Popular and Top rated movies using the **The MovieDB API**. It
 - Import the project to Android Studio or any IDE that you use for Android app development.
 - Get your API Key from [The Movie Database](https://www.themoviedb.org/) by creating an account.
 - Use this API Key in this file [Constant](https://github.com/abanidas/PopularMoviesApp/blob/master/app/src/main/java/com/abani/nanodegree/android/popularmoviesapp/constants/Constants.java).
-- Run this app.
+- Run the app on Real device or Emulator.
 
 ## App UI
 
