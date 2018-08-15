@@ -16,3 +16,9 @@ This App displays Popular and Top rated movies using the **The MovieDB API**. It
 ## App UI
 
 <img src="https://user-images.githubusercontent.com/18400670/44155137-14a14744-a0ca-11e8-9bc0-8c30618d37d9.jpg" width=270 height=465/>  &nbsp; <img src="https://user-images.githubusercontent.com/18400670/44155226-5d86ad96-a0ca-11e8-83d1-9bbe91a6568c.jpg" width=270 height=465/>  &nbsp; <img src="https://user-images.githubusercontent.com/18400670/44155276-7f1dd506-a0ca-11e8-9cfa-04c91d889841.jpg" width=270 height=465/>
+
+## Implemented
+- Retrofit
+- ButterKnife
+- Room with LiveData
+- Architecture Component
